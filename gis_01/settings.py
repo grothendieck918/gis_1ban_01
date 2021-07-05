@@ -14,6 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+# =====setting.py파일의경로==========,=gis_01=.=gis_01=
 # 시크릿키를 .env에 따로 저장하고 불러오기
 env_list = dict()
 local_env = open(os.path.join(BASE_DIR, '.env')) # BASE_DIR + .env 경로합쳐서 local_env에
