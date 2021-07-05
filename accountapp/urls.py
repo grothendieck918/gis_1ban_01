@@ -21,5 +21,5 @@ from accountapp.views import hello_world
 app_name = 'accountapp'
 
 urlpatterns = [
-    path('hello_world/', hello_world, name ='hello_world' )  #이 라우터에대한 이름도 붙여준다
+    path('hello_world/', hello_world, name ='hello_world' )  #이 라우팅에대한 이름도 붙여준다
 ]
