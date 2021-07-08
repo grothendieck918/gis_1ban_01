@@ -16,6 +16,13 @@
     <div style="margin:2rem; text-align: center;">
 {#                                                                                        overflow:scroll; ,hidden;#}
         <h1>METHOD</h1>
+
+        <form action="/accounts/hello_world/" method="post">
+            {% csrf_token %}
+            <input type="submit" class = "py-5 btn btn-warning rounded-pill">
+        </form>
+
+
         <h3>{{ text}}</h3>
 
     </div>
