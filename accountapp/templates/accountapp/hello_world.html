@@ -19,11 +19,12 @@
 
         <form action="/accounts/hello_world/" method="post">
             {% csrf_token %}
+            <input type="text" name= "hello_world_input">
             <input type="submit" class = "py-5 btn btn-warning rounded-pill">
         </form>
 
 
-        <h3>{{ text}}</h3>
+        <h3>{{hello_world_output.text}}</h3>
 
     </div>
 
