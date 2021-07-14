@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="text-center">
+        <div class="m-5">
+            <h4>Login</h4>
+        </div>
+        <div>
+            <form action="{% url 'accountapp:login' %}" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <div class="m-4">
+                    <input type="submit" class="px-5 btn btn-primary rounded-pill">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
