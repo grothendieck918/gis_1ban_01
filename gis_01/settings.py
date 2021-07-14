@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accountapp'  #이 앱을 사용하겠다 선언해줘야함
+    'accountapp',  #이 앱을 사용하겠다 선언해줘야함
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
