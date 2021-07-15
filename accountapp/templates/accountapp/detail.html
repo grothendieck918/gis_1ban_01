@@ -8,5 +8,11 @@
         <div>
             {{ target_user.date_joined }}
         </div>
+        <div>
+            <p>
+                <a href={% url 'accountapp:update' pk=user.pk %}> Update info </a>
+{#                        여기선이젠 나의 pk#}
+            </p>
+        </div>
     </div>
 {% endblock %}
