@@ -8,15 +8,17 @@
         <div>
             {{ target_user.date_joined }}
         </div>
+        {% if user.pk == target_user.pk %}
+{#            user 접속되어있어서 요청보내는놈 targetuser 서버에서찾아낸유저#}
+
         <div>
-            <p>
-                <a href={% url 'accountapp:update' pk=user.pk %}> Update info </a>
+                <a href={% url 'accountapp:update' pk=target_user.pk %}> Update info </a>
 {#                        여기선이젠 나의 pk#}
-            </p>
-            <p>
-                <a href={% url 'accountapp:delete' pk=user.pk %}> Quit </a>
-{#                        여기선이젠 나의 pk#}
-            </p>
         </div>
+        <div>
+                <a href={% url 'accountapp:delete' pk=target_user.pk %}> Quit </a>
+{#                        여기선이젠 나의 pk#}
+        </div>
+    {% endif %}
     </div>
 {% endblock %}
