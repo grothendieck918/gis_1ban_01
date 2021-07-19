@@ -13,6 +13,10 @@
                 <a href={% url 'accountapp:update' pk=user.pk %}> Update info </a>
 {#                        여기선이젠 나의 pk#}
             </p>
+            <p>
+                <a href={% url 'accountapp:delete' pk=user.pk %}> Quit </a>
+{#                        여기선이젠 나의 pk#}
+            </p>
         </div>
     </div>
 {% endblock %}

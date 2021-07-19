@@ -8,7 +8,7 @@
         </div>
         <div>
             <form action="{% url 'accountapp:update' pk=target_user.pk %}" method="post">
-{#                아까는 자기의페이지여서 user.pk 지금은 수정을 할 타겟유저의pk#}
+{#                아까는 자기의페이지여서 user.pk 지금은 수정을 할 타겟유저의pk 유저가 서버에 요청하면 그 pk 의 타겟유저로접근#}
                 {% csrf_token %}
 {#                {{ form }}#}
                 {% bootstrap_form form %}
