@@ -17,6 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), # python manage.py createsuperuser 관리자계정 생성
     path('accounts/', include('accountapp.urls')) #accounts/ 이주소로 접근하면 ~
 ]
