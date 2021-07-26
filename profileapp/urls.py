@@ -16,7 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-# app_name = 'profileapp'
+
+from profileapp.views import ProfileCreateView
+
+app_name = 'profileapp'
 
 urlpatterns = [
+    path('create/', ProfileCreateView.as_view(), name='create'),
 ]
