@@ -1,13 +1,18 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
 # Create your views here.
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, UpdateView
 
+from profileapp.decorators import profile_ownership_required
 from profileapp.forms import ProfileCreationForm
 from profileapp.models import Profile
 
-
+@method_decorator(login_required, 'get')
+@method_decorator(login_required, 'post')
+# 이제는 정상적으로 로그인한유저만 프로필생성뷰로 접근가능함
 class ProfileCreateView(CreateView):
     model = Profile
     form_class = ProfileCreationForm
@@ -18,7 +23,8 @@ class ProfileCreateView(CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
-
+@method_decorator(profile_ownership_required, 'get')
+@method_decorator(profile_ownership_required, 'post')
 class ProfileUpdateView(UpdateView):
     model = Profile
     form_class = ProfileCreationForm
