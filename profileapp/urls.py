@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-from profileapp.views import ProfileCreateView
+from profileapp.views import ProfileCreateView, ProfileUpdateView
 
 app_name = 'profileapp'
 
 urlpatterns = [
     path('create/', ProfileCreateView.as_view(), name='create'),
+    path('update/<int:pk>', ProfileUpdateView.as_view(), name='update'),
+    # 무언가를 수정해야되는거니까 <int:pk> 필요
 ]
