@@ -27,11 +27,11 @@
 {#            user 접속 되어 있어서 요청보내는놈 targetuser 서버에서찾아낸유저#}
 
         <div>
-                <a href={% url 'accountapp:update' pk=target_user.pk %}> Update info </a>
+                <a href="{% url 'accountapp:update' pk=target_user.pk %}" class="material-icons round_button mx-1">settings</a>
 {#                        여기선이젠 나의 pk#}
-        </div>
-        <div>
-                <a href={% url 'accountapp:delete' pk=target_user.pk %}> Quit </a>
+
+
+                <a href="{% url 'accountapp:delete' pk=target_user.pk %}" class="material-icons round_button mx-1">close</a>
 {#                        여기선이젠 나의 pk#}
         </div>
     {% endif %}
