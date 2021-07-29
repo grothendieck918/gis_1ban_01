@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'accountapp',  #이 앱을 사용하겠다 선언해줘야함
     'bootstrap4',
     'profileapp',
+    'articleapp',
 ]
 
 MIDDLEWARE = [

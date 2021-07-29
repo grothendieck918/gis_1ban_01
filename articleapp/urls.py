@@ -13,14 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf import settings
-from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path, include
 
+from accountapp.views import hello_world, AccountCreateView, AccountDetailView, AccountUpdateView, AccountDeleteView
+
+# app_name = 'articleapp'
+
 urlpatterns = [
-    path('admin/', admin.site.urls), # python manage.py createsuperuser 관리자계정 생성
-    path('accounts/', include('accountapp.urls')), # accounts/ 이주소로 접근하면 ~
-    path('profiles/', include('profileapp.urls')),
-    path('articles/', include('articleapp.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+]
