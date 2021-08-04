@@ -14,6 +14,12 @@
             {#  게시물 내용    #}
             <img src="{{ target_article.image.url }}" alt="">
             <h4>{{ target_article.content }}</h4>
+            <div>
+                <a href="{% url 'articleapp:update' pk=target_article.pk %}"
+                class="btn btn-success rounded-pill px-5">
+                    Update
+                </a>
+            </div>
         </div>
 
     </div>

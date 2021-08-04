@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.urls import reverse_lazy
-from django.views.generic import CreateView, DetailView
+from django.urls import reverse_lazy, reverse
+from django.views.generic import CreateView, DetailView, UpdateView
 
 from articleapp.forms import ArticleCreationForm
 from articleapp.models import Article
@@ -24,3 +24,13 @@ class ArticleDetailView(DetailView):
     # html에서 어떤객체를통해 오브젝트를 이동할건지
     context_object_name = 'target_article'
     template_name = 'articleapp/detail.html'
+
+class ArticleUpdateView(UpdateView):
+    model = Article
+    form_class = ArticleCreationForm
+    context_object_name = 'target_article'
+    template_name = 'articleapp/update.html'
+
+    # 특성 success_url = 로가기위해선 메소드사용
+    def get_success_url(self):
+        return reverse('articleapp:detail', kwargs={'pk': self.object.pk})
