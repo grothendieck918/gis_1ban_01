@@ -48,6 +48,16 @@
     <script src="{% static 'js/magicgrid.js' %}"></script>
 
     {% include 'snippets/pagination.html' %}
+    <div class="text-center my-5">
+        <a href="{% url 'articleapp:create' %}"
+        class="btn btn-dark rounded-pill px-5 material-icons">
+            brush
+        </a>
+        <a href="{% url 'articleapp:create' %}"
+        class="btn btn-outline-dark rounded-pill px-5">
+            Create Article
+        </a>
+    </div>>
 
 
 
