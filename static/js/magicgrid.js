@@ -284,7 +284,7 @@ let magicGrid = new MagicGrid({
 // 변수를 하나만듬 document = 매직그리드.js가 불러오는 html 전체에서 img태그를 다가져옴
 var masonrys = document.getElementsByTagName("img")
 // 그리고 그변수를 가져와질때마다 레이아웃을 재배치할거임
-for (let i =0; masonrys.length; i++) {
+for (let i =0; i < masonrys.length; i++) {
   masonrys[i].addEventListener("load", function () {
     magicGrid.positionItems();
     // 이미지가로드될떄마다 호출
