@@ -32,5 +32,5 @@ class ProjectListView(ListView):
     model = Project
     context_object_name = 'project_list'
     # target의 list가 아니라 project의 리스트를 받는다는 의미로
-    template_name = 'projectapp/list.htmml'
+    template_name = 'projectapp/list.html'
     paginate_by = 20
