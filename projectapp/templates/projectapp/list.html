@@ -10,8 +10,8 @@
             margin: 0 auto;
         }
         .container div {
-            width: 45%;
-            max-width: 200px;
+            {#width: 45%;#}
+            {#max-width: 200px;#}
             {#height: 500px;#}
             display: flex;
             justify-content: center;
@@ -22,8 +22,9 @@
         }
 
         div img {
-            width: 100%;
-            {#너비도맞춰줌사진에#}
+            width: 7rem;
+            height: 7rem;
+            object-fit: cover;
             border-radius: 1rem;
         }
 
@@ -44,7 +45,8 @@
                 <a href="{% url 'projectapp:detail' pk=project.pk %}">
                     <img src="{{ project.image.url }}" alt="">
                 </a>
-            <span class="NNS_B m-2">{{ project.name }}</span>
+            <span class="NNS_B m-2">{{ project.name | truncatechars:7 }}</span>
+{#            7바이트까지만 출력하겠다 #}
             </div>
 
         {% endfor %}
