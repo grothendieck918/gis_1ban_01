@@ -20,3 +20,5 @@ class Article(models.Model):
     
     created_at = models.DateField(auto_now_add=True, null=True)
     # 이 객체가 생성되는순간에 현재시간이 저장됨
+
+    like = models.IntegerField(default=0)
