@@ -24,7 +24,6 @@ class ProjectCreateView(CreateView):
         return reverse('projectapp:detail', kwargs={'pk': self.object.pk})
     # self.object 크리에이트뷰에서만들어진 객체
 
-
 class ProjectDetailView(DetailView, MultipleObjectMixin):
     # 다수의 객체를 사용할수있게하는 멀티플오브젝트믹스인
     model = Project
@@ -37,11 +36,9 @@ class ProjectDetailView(DetailView, MultipleObjectMixin):
         user = self.request.user
         project = self.object
 
-        subscription = Subscription.objects.filter(user=user,
-                                                   project=project)
-
-        if subscription.exists():
-            subscription = 1
+        if user.is_authenticated:
+            subscription = Subscription.objects.filter(user=user,
+                                                       project=project)
         else:
             subscription = None
 
