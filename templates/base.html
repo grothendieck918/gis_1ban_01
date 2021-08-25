@@ -11,6 +11,15 @@
 {#가로 줄 생성#}
 <hr>
 
+{% for message in messages %}
+    <div class="text-center">
+        <div class="btn btn-success rounded-pill px-5">
+            {{ message }}
+        </div>
+    </div>
+{% endfor %}
+
+
 {% block content %}
 {%  endblock %}
 
