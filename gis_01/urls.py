@@ -18,7 +18,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from articleapp.views import ArticleListView
+
 urlpatterns = [
+    path('', ArticleListView.as_view(), name='home'),
+
     path('admin/', admin.site.urls), # python manage.py createsuperuser 관리자계정 생성
     path('accounts/', include('accountapp.urls')), # accounts/ 이주소로 접근하면 ~
     path('profiles/', include('profileapp.urls')),
