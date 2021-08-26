@@ -24,7 +24,7 @@
             {#  게시물 내용    #}
             <img src="{{ target_article.image.url }}" alt=""
             class="article_image">
-            <div class="article_content">{{ target_article.content }}</div>
+            <div class="article_content">{{ target_article.content | safe }}</div>
             {% if target_article.writer == user %}
             <div>
                 <a href="{% url 'articleapp:update' pk=target_article.pk %}"
